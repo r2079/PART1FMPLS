@@ -2,12 +2,12 @@ interfaces:
         lo0:
                  unit       : 0
                  description: 'Loopback Interface'
-                 ip_address : '1.1.1.1/32'
+                 ip_address : '2.2.2.2/32'
                  mpls_family: False
         ge-0/0/1:
                  unit       : 0
-                 description: 'Connects to P Router -> R2'
-                 ip_address : '9.9.12.1/24'
+                 description: 'Connects to PE Router -> R1'
+                 ip_address : '9.9.12.2/24'
                  mpls_family: True
 
 
