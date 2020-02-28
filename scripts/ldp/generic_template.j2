@@ -1,0 +1,47 @@
+{## sample data
+
+interfaces:
+        lo0:
+                 unit       : 0
+                 description: 'Loopback Interface'
+                 ip_address : '1.1.1.1/32'
+                 mpls_family: False
+        ge-0/0/1:
+                 unit       : 0
+                 description: 'Connects to P Router -> R2'
+                 ip_address : '9.9.12.1/24'
+                 mpls_family: True
+
+protocols:
+        ospf:
+                area: 0
+                interfaces: ['lo0.0','ge-0/0/1.0']
+        mpls:
+                interfaces: ['all']
+        ldp:
+                interfaces: ['all']
+
+##}
+
+{% for interface,properties in interfaces.items() -%}
+
+set interfaces {{ interface }} unit {{ properties['unit'] }} description "{{ properties['description'] }}"
+set interfaces {{ interface }} unit {{ properties['unit'] }} family inet address {{ properties['ip_address'] }}
+{% if properties['mpls_family']  == True -%}
+  set interfaces {{ interface }} unit {{ properties['unit'] }} family mpls
+{% endif -%}
+{% endfor -%}
+
+{% for protocol,properties in protocols.items() -%}
+{% if protocol=='ospf' -%}
+{% for interface in properties['interfaces'] -%}
+set protocols ospf area {{ properties['area'] }} interface {{ interface }}
+{% endfor -%}
+{% elif protocol == 'mpls' or protocol == 'ldp' -%}
+{% for interface in properties['interfaces'] -%}
+set protcols {{ protocol }} interface {{ interface }}
+{% endfor -%}
+{% endif -%}
+{% endfor -%}
+
+

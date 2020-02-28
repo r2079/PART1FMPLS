@@ -10,6 +10,13 @@ interfaces:
                  ip_address : '9.9.12.1/24'
                  mpls_family: True
 
-
+protocols:
+        ospf:
+                area: 0
+                interfaces: ['lo0.0','ge-0/0/1.0']
+        mpls:
+                interfaces: ['all']
+        ldp:
+                interfaces: ['all']
          
 
