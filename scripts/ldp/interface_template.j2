@@ -13,6 +13,6 @@ interfaces:
 set interfaces {{ interface }} unit {{ properties['unit'] }} description "{{ properties['description'] }}"
 set interfaces {{ interface }} unit {{ properties['unit'] }} family inet address {{ properties['ip_address'] }}
 {% if properties['mpls_family']  == True -%}
-  set interfaces {{ interface }} unit {{ properties['unit'] }} fample mpls
+  set interfaces {{ interface }} unit {{ properties['unit'] }} family mpls
 {% endif -%}
 {% endfor -%}
