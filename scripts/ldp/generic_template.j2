@@ -39,7 +39,7 @@ set protocols ospf area {{ properties['area'] }} interface {{ interface }}
 {% endfor -%}
 {% elif protocol == 'mpls' or protocol == 'ldp' -%}
 {% for interface in properties['interfaces'] -%}
-set protcols {{ protocol }} interface {{ interface }}
+set protocols {{ protocol }} interface {{ interface }}
 {% endfor -%}
 {% endif -%}
 {% endfor -%}

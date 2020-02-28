@@ -2,6 +2,7 @@ import argparse
 from colorama import Fore
 from colorama import Style
 from napalm import get_network_driver
+import sys
 driver = get_network_driver('junos')
 
 parser = argparse.ArgumentParser(description='Deploy configuration to Junos Devices via Napalm')
@@ -22,11 +23,15 @@ def  deploy_config(router, filename):
     device = driver(router, 'lab', 'lab123')
     try:
         device.open()
-        colorprint('opened the Device, loading the configuration')
-        device.load_merge_candidate(filename=filename)
+        if device.hostname == router:
+            colorprint('opened the Device, loading the configuration')
+            device.load_merge_candidate(filename=filename)
+        else:
+            colorprint('Wrong device connected, exiting!')
+            sys.exit(1)
     except:
         print('Error opening connection to Device')
-
+        sys.exit(1)
     # viewing the diff
     colorprint('Difference between Candidate and Active Configuration')
     difference_in_config = device.compare_config()
