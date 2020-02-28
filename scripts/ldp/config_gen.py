@@ -9,7 +9,7 @@ parser.add_argument('-r', action='store',dest='router_name',help='Pass the Route
 args = parser.parse_args()
 
 interface_yaml = args.interface_yaml
-router_name    = args.router_name
+router_name    = args.router_name+'.cfg'
 
 def output_config(interface_yaml,router_name):
 
