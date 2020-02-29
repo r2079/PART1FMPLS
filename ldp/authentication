@@ -1,0 +1,7 @@
+authentication 
+ - tcp md5 signature 
+ - 16.1 or greater, HMAC and MD5 are both supporter along with subnet match 
+ - session group and authentication-key chain are required 
+ - https://tools.ietf.org/html/rfc5036
+ - https://wiki.wireshark.org/DisplayFilters
+
