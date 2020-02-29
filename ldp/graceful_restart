@@ -1,0 +1,2 @@
+- lets say you are a  router and your control plane is restarting, GR  helps in  mainting the Forwarding  plane 
+-  Two modes - 
