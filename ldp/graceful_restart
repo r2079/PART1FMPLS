@@ -1,2 +1,45 @@
 - lets say you are a  router and your control plane is restarting, GR  helps in  mainting the Forwarding  plane 
--  Two modes - 
+-  Two modes -  helper mode (enabled by default) and GR mode (which needs to be configured) , indpendent of each other
+- Two important timers 
+  - Recovery Time -  Length of the time any router waits for LDP to restart gracefully.  
+                  -  Its also the time where neighboring router maintains the state, allowing it to forward traffic
+  
+  - Reconnect Time - Length of time advertised by Restarting Router to let its neighbor know to wait X amount of 
+                     seconds before it purges/flushes and  attempts for a Re-connect.
+
+Example output  
+
+https://www.juniper.net/documentation/en_US/junos/topics/topic-map/ldp-configuration.html#id-configuring-ldp-graceful-restart
+
+
+mpls.0: 21 destinations, 21 routes (21 active, 0 holddown, 0 hidden)
+Restart Pending: LDP
++ = Active Route, - = Last Active, * = Both
+
+0                  *[MPLS/0] 00:02:31, metric 1
+                      to table inet.0
+0(S=0)             *[MPLS/0] 00:02:31, metric 1
+                      to table mpls.0
+1                  *[MPLS/0] 00:02:31, metric 1
+                      Receive
+2                  *[MPLS/0] 00:02:31, metric 1
+                      to table inet6.0
+2(S=0)             *[MPLS/0] 00:02:31, metric 1
+                      to table mpls.0
+13                 *[MPLS/0] 00:02:31, metric 1
+                      Receive
+299776             *[Kernel/4294967294] 00:02:31
+                    > to 9.9.12.2 via ge-0/0/1.0, Pop
+299776(S=0)        *[Kernel/4294967294] 00:02:31
+                    > to 9.9.12.2 via ge-0/0/1.0, Pop
+299792             *[Kernel/4294967294] 00:02:31
+                    > to 9.9.12.2 via ge-0/0/1.0, Swap 299856
+299808             *[Kernel/4294967294] 00:02:31
+                    > to 9.9.12.2 via ge-0/0/1.0, Pop
+299808(S=0)        *[Kernel/4294967294] 00:02:31
+                    > to 9.9.12.2 via ge-0/0/1.0, Pop
+299824             *[Kernel/4294967294] 00:02:31
+                    > to 9.9.12.2 via ge-0/0/1.0, Swap 299856
+299840             *[Kernel/4294967294] 00:02:31
+
+All the kernel Routes are a Result of GR during restart helping Router to  forward the traffic.
