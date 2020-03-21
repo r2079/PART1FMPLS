@@ -1,0 +1,16 @@
+rsvp overview 
+
+- Resource Reservation Protocol 
+- signalling protocol 
+- https://www.juniper.net/documentation/en_US/junos/topics/topic-map/rsvp-overview.html
+- understand data-path 
+- Request goes through each node along the data path 
+
+properties 
+
+- Unidirectional flows 
+- maintains soft state 
+- Not a Routing protocol but depends on them 
+- Reservation styles - (FF , SE ) we will see in later section 
+- ipv4 / ipv6 support 
+

@@ -1,0 +1,7 @@
+3. RSVP Fundamentals 
+
+-   Rsvp version 1 
+-   Monitors the status of the IGP to detect when a node fails 
+-   when nodes fails, something called Path Error Message is generated and RSVP session goes down. Path Err will be discussed below
+-   RSVP has hellos as well, used mostly when IGP on neighbor isnt support 
+-   Advice from Juniper, configure timers / fast timers for igp instead of RSVP 

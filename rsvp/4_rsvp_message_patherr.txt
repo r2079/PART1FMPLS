@@ -1,0 +1,5 @@
+4e PathErr Messages 
+
+- unicast message to the sender who issued path message 
+- happens because of parameter problems 
+- Informational messages , does not alter any path or state along the way 

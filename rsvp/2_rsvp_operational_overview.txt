@@ -1,0 +1,23 @@
+2. Rsvp operatinal overview 
+
+- Rsvp creates sessions to handle each flow 
+- destination address , an optional destination port, and a protocol - identifies session 
+- sender - identified by source address and source port 
+
+sequence of events 
+
+- PATH message is initiated by the sender 
+- Receiver receives the path message 
+- Sends RESERVE message (Resv) to sender 
+- flow descriptor - used by Routers along the path for reservations
+- sender receives RESV message and sends the data 
+
+
+LSP 
+
+ - label switched path 
+ - As the name suggests the label gets switched along the path - here Label is MPLS label and Rsvp helps to establish it 
+ - Rsvp helps in Traffic engineering and bandwidth allocation 
+ - uses CSPF and EROs both discussed in coming topics 
+ - you configure the interfaces just like LDP 
+ - authentication , explicit path and link coloring - differentiates RSVP vs LDP 

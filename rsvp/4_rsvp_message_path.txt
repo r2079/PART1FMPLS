@@ -1,0 +1,9 @@
+4a PATH Message 
+
+- Path message always travels downstream 
+- Following IGP best path or Multicast PIM 
+- create path states in the routers along the way 
+- routers learn previous and next-hop node for the session 
+- sent periodically  to refresh 
+- keep-multiplier - Number of consecutive path messages 
+- path states are kept for the time - [(km + 0.5)*1.5*refresh-time]

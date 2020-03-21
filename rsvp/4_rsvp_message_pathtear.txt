@@ -1,0 +1,7 @@
+4c PathTear Messages 
+
+- used to tear down path / resv states along the path 
+- pathtear follows same path as PATH 
+- caused by state timeout , sent by router / application 
+- path tear helps to quicky free up network resource, even if path tear is lost it will eventually timeout 
+

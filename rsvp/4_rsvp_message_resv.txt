@@ -1,0 +1,7 @@
+4b Resv Message 
+
+- Each receiver will send RESV message upstream towards sender 
+- PATH message and RESV follow exactly the same path 
+- RESV responsible for creating and maintain a reservation state along the way 
+- RESV are sent periodically to refresh 
+- Exactly same timer as Path - [(km + 0.5)*1.5*refresh-time]

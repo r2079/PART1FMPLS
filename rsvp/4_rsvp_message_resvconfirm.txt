@@ -1,0 +1,6 @@
+4g ResvConfirm Messages 
+
+- request confirmation of a reservation request 
+- ResvConfirm message will be used 
+- Juniper routers wont initaite this, but can respond to other vendor equipment  
+

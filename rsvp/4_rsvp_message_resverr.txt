@@ -1,0 +1,5 @@
+4f ResvErr Messages 
+
+- Deilvered to all receivers involved 
+- Informational messages 
+- Does not alter any path or state along the way 

@@ -1,0 +1,5 @@
+4d ResvTear Messages 
+
+- Remove RESV states along the path 
+- RESVTear messages initiated by receiver or by router when Reservation times out 
+- similar to PATHTear these enhance the time to free up network resources , if lost eventually they will be cleared up 
