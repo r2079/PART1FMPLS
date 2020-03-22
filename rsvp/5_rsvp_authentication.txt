@@ -1,0 +1,26 @@
+5  rsvp authentication
+
+- https://tools.ietf.org/html/draft-ietf-rsvp-md5-03 
+- RSVP authentication style 
+- juniper uses authentication style by default 
+- automatically switches to this style - if received from neighbor 
+- 2 cases  -  authentication of RSVP messages / message fragments OR authentication of sessions 
+- IP4 Keyed Message Digest INTEGRITY Object: Class = 4,  
+  |
+                                      C-Type = 1
+          
+               +-------------+-------------+-------------+-------------+  *
+               |                    Key Identifier                     |
+               +-------------+-------------+-------------+-------------+
+               |                    Sequence Number                    |
+               +-------------+-------------+-------------+-------------+
+               |               Sending System IP4 Address              |
+               +-------------+-------------+-------------+-------------+
+               |                                                       |
+               +                                                       +
+               |                                                       |
+               +              Keyed Message Digest                     |
+               |                                                       |
+               +                                                       +
+               |                                                       |
+               +-------------+-------------+-------------+-------------+
