@@ -1,0 +1,9 @@
+6  rsvp reservation styles 
+
+- Two options  
+- Distinct reservation - establishes its own reservation with upstream sender 
+- Shared reservation   - All receivers make a single reservation that is shared among many senders 
+
+- Fixed Filter -> distinct reservation among explicit senders - enabled by default 
+- Wildcard Filter -> shared reservations among wildcard senders 
+- Shared explicit -> shared reservations among explicit senders       

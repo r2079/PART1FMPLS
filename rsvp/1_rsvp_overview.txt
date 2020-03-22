@@ -11,6 +11,6 @@ properties
 - Unidirectional flows 
 - maintains soft state 
 - Not a Routing protocol but depends on them 
-- Reservation styles - (FF , SE ) we will see in later section 
+- Reservation styles - (FF , WF, SE ) we will see in later section 
 - ipv4 / ipv6 support 
 
