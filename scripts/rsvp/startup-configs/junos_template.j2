@@ -1,0 +1,28 @@
+{##
+
+# This template only support Juniper as of now, other Docker images should 
+  be statically coded, there will be another template for clarity on docker
+
+ sample data
+
+interfaces:
+
+        fxp0:
+                 unit       : 0
+                 description: 'Connects to P Router -> R2'
+                 ip_address : '9.9.12.1/24'
+                 dg         : 172.29.129.254
+
+##}
+
+{% for interface,properties in interfaces.items() -%}
+
+set interfaces {{ interface }} unit {{ properties['unit'] }} description "{{ properties['description'] }}"
+set interfaces {{ interface }} unit {{ properties['unit'] }} family inet address {{ properties['ip_address'] }}
+set routing-options static route 0.0.0.0/0 next-hop {{ properties['dg'] }}
+
+{% endfor -%}
+
+
+
+

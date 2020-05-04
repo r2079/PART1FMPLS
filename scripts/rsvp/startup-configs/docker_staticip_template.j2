@@ -1,0 +1,26 @@
+{## sample data
+
+interfaces:
+
+        eth0:
+
+                 ip_address : '9.9.12.1/24'
+                 docker: True
+                 dg    : 172.29.129.254
+                 dev   : eth1 
+
+
+##}
+
+{% for interface,properties in interfaces.items() -%}
+{% if properties['docker']  == True -%}
+
+
+ip addr add {{ properties['ip_address'] }} dev {{ properties['dev'] }} || true
+ip route add default via {{ properties['dg'] }} || true 
+
+{% endif -%}
+{% endfor -%}
+
+
+

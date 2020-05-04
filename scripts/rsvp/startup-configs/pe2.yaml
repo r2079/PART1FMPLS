@@ -1,0 +1,10 @@
+interfaces:
+
+        em0:
+                 unit       : 0
+                 description: 'Connects to Management'
+                 ip_address : '172.29.129.241/24'
+                 dg         : 172.29.129.254
+
+
+

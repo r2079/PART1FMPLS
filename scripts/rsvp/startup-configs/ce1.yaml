@@ -1,0 +1,8 @@
+interfaces:
+        eth1:
+                 ip_address : '172.29.129.245/24'
+                 docker : True
+                 dg    : 172.29.129.254
+                 dev   : eth1 
+
+
