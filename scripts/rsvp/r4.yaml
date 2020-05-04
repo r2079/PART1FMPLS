@@ -1,0 +1,30 @@
+interfaces:
+        lo0:
+                 unit       : 0
+                 description: 'Loopback Interface'
+                 ip_address : '4.4.4.4/32'
+                 mpls_family: False
+        ge-0/0/3:
+                 unit       : 0
+                 description: 'Connects to P Router -> R3'
+                 ip_address : '9.9.34.4/24'
+                 mpls_family: True
+        ge-0/0/5:
+                 unit       : 0
+                 description: 'Connects to P Router -> R1'
+                 ip_address : '9.9.14.4/24'
+                 mpls_family: True        
+
+protocols:
+        ospf:
+                area: 0
+                interfaces: ['lo0.0','ge-0/0/3.0','ge-0/0/5']
+        mpls:
+                interfaces: ['all']
+        rsvp:
+                interfaces: ['all']
+
+
+
+         
+
