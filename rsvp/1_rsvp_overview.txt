@@ -5,6 +5,7 @@ rsvp overview
 - https://www.juniper.net/documentation/en_US/junos/topics/topic-map/rsvp-overview.html
 - understand data-path 
 - Request goes through each node along the data path 
+- Admission control vs Policy Control 
 
 properties 
 
